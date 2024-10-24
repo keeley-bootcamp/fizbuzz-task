@@ -1,5 +1,6 @@
 package com.lloyds;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class FizzBuzz {
@@ -30,6 +31,14 @@ public class FizzBuzz {
     public static int readUserValue() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter a number between 1 and 100:");
-        return scanner.nextInt();
+
+        while (true) {
+            try {
+                return scanner.nextInt();
+            } catch (InputMismatchException e) {
+                System.out.println("Please enter a number");
+                scanner.next();
+            }
+        }
     }
 }
