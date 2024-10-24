@@ -6,6 +6,8 @@ import java.util.Scanner;
 public class FizzBuzz {
     public static void fizzBuzz() {
         int maxValue = readUserValue();
+
+        // check that user input is within range
         if (maxValue >= 1 && maxValue <= 100) {
             for (int i = 1; i <= maxValue; i++) {
                 if (i % 15 == 0) {
@@ -32,11 +34,12 @@ public class FizzBuzz {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter a number between 1 and 100:");
 
+        // catch invalid input types
         while (true) {
             try {
                 return scanner.nextInt();
             } catch (InputMismatchException e) {
-                System.out.println("Please enter a number");
+                System.out.println("Please enter a whole number!");
                 scanner.next();
             }
         }
