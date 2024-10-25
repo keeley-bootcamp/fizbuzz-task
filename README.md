@@ -1,3 +1,3 @@
-# sprint-1
+# FizzBuzz
 
 Solution for FizzBuzz!!
